@@ -24,6 +24,15 @@ app.get ("/", (req,res)=>{
     res.send("Hello World")
 })
 
+app.get("/login",(req, res)=>{
+    req.session.user ={
+        name:"john",
+        email:"john@example.com ",
+        age:30
+    }
+    res.send("User logged in")
+})
+
 app.listen(3000,()=>{
     console.log("server is running on prot 3000")
 
