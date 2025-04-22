@@ -2,6 +2,10 @@
 import express from "express";
 import session from "express-session";
 
+
+// local imports
+
+import authRoute from "../routes/auth.routes.js";
 const app = express();
 const PORT = 8080;
 
@@ -13,6 +17,8 @@ app.get("/",(req, res)=>{
     res.send("welcome to task Manager API");
     
 })
+
+app.use("/auth",authRoute)
 
 
 app.listen(PORT, () => {
